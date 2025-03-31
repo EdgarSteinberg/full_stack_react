@@ -1,0 +1,60 @@
+.itemContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.container {
+    width: 16em;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.card {
+    width: 16rem;
+    padding: 7px;
+    display: flex;
+    align-items: center;
+}
+
+.card:hover {
+    border: 1px solid rgb(185, 185, 185);
+    border-radius: 7px;
+}
+
+.img {
+    width: 100px;
+    height: 150px;
+}
+
+.btn {
+    width: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.total {
+    text-align: center;
+    font-size: 25px;
+}
+
+/* Estilo para el mensaje cuando el carrito está vacío */
+
+
+
+.emptyCart {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.emptyCartLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}

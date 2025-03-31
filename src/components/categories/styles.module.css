@@ -1,0 +1,138 @@
+h1 {
+    text-align: center;
+}
+
+.itemListContainer {
+    display: flex;
+    /* Activa Flexbox */
+    flex-wrap: wrap;
+    /* Permite que los items se ajusten cuando no hay suficiente espacio */
+    justify-content: space-around;
+    /* Distribuye el espacio entre los items */
+    gap: 20px;
+    /* Espacio entre las tarjetas */
+    padding: 20px;
+    background-color: #f4faf4;
+    /* Espaciado dentro del contenedor */
+}
+
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.card {
+    width: 18rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid white;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin: 10px;
+    overflow: hidden;
+}
+
+.card:hover {
+    border-radius: 10px;
+    border: 1px solid rgb(146, 146, 146);
+}
+
+.image {
+    height: 200px;
+    object-fit: contain;
+
+}
+
+.cardCategorie {
+    width: 18rem;
+    text-align: center;
+    align-items: center;
+    margin: 7px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 10px;
+
+
+}
+
+
+.image {
+    height: 200px;
+   
+}
+
+.stars {
+    margin: 5px 0;
+    color: #FFD700; /* Amarillo dorado para las estrellas */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.cardLink {
+    text-decoration: none;
+    color: inherit;
+}
+
+.cardCategorie {
+    width: 18rem;
+    border-radius: 12px;
+    text-align: center;
+    align-items: center;
+    border: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.cardCategorie:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.imageContainer {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cardCategorie:hover .image {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.categoryTitle {
+    margin: 0;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+}

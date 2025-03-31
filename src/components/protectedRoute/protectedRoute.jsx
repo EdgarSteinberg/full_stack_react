@@ -1,15 +1,25 @@
-import { Navigate } from 'react-router-dom';
-import { UserRole } from '../userRole/userRole';
+import { useContext } from "react";
+import { CartContext } from "../../context/cartContext";
+import SkeletonCard from "../skeleton_card/skeleton_card";
+import styles from './styles.module.css';
+import NotProfile from "../notProfile/notProfile";
 
-const ProtectedRoute = ({ element }) => {
-    const role = UserRole();
+const ProtectedRoute = ({ children }) => {
+    const { profile, loading } = useContext(CartContext);
 
-    if (role !== "admin" && role !== "premium") {
-        // Si el rol no es 'admin' ni 'premium', redirige a otra página
-        return <Navigate to="/unauthorized" replace />;
+    if (!profile) {
+        return (
+            <NotProfile />
+        );
     }
 
-    return element;
+    if (loading) return <div className={styles.itemListContainer}><SkeletonCard /></div>;
+
+    if (!profile || (profile.role !== "admin" && profile.role !== "premium")) {
+        return <NotProfile />;
+    }
+
+    return children;
 };
 
 export default ProtectedRoute;

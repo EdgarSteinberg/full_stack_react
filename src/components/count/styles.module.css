@@ -1,9 +1,49 @@
-.botones {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+ .cardContainer {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-top: 20px;
+ }
 
-p {
-    margin: 10px;
-}
+ .cardStyles {
+     display: flex;
+     flex-direction: row;
+     width: 70%;
+     max-width: 800px;
+     border-radius: 12px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+     overflow: hidden;
+ }
+
+ .card {
+     flex: 2;
+     padding: 20px;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+ }
+
+ .img {
+     margin-top: 10px;
+     width: 200px;
+     height: 200px;
+     object-fit: contain;
+ }
+
+ .contador {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     margin-bottom: 15px;
+ }
+
+ .botones {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+ }
+
+ p {
+     margin: 10px;
+ }

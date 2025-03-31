@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams} from "react-router-dom";
 import CategoryItem from "./category_item";
 import CategoryProduct from "./category_product";
+import Spinner from 'react-bootstrap/Spinner';
 
 const Categories = () => {
     const [categories, setCategories] = useState([]);  // Para almacenar las categorías
     const [products, setProducts] = useState([]);      // Para almacenar los productos
+    const [title, setTitle] = useState(null)
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
     const { category } = useParams();
@@ -22,6 +24,7 @@ const Categories = () => {
             .then(json => {
                 if (category) {
                     setProducts(json.payload); // Si estamos obteniendo productos, los almacenamos en el estado de productos
+                    setTitle(category)
                 } else {
                     setCategories(json.payload); // Si estamos obteniendo categorías, las almacenamos en el estado de categorías
                 }
@@ -32,19 +35,25 @@ const Categories = () => {
 
     return (
         <div>
-            {loading ? (
-                <p>...Cargando</p>
-            ) : error ? (
-                <p>Error: {error}</p>
-            ) : (
-                category ? (
-                    // Si estamos en la vista de productos, mostramos los productos de esa categoría
-                    <CategoryProduct products={products}/>
+            {
+                error ? (
+                    <p>Error: {error}</p>
                 ) : (
-                    // Si no estamos en la vista de productos, mostramos las categorías
-                    <CategoryItem categories={categories}/>
-                )
-            )}
+                    category ? (
+                        // Si estamos en la vista de productos, mostramos los productos de esa categoría
+                        <>
+                            <h1>{title ? title.toUpperCase() : <Spinner animation="border" variant="danger" />}</h1>
+                            <CategoryProduct products={products} title={title} />
+                        </>
+                    ) : (
+                        // Si no estamos en la vista de productos, mostramos las categorías
+                        <>
+                            {/* <h1>Top marcas y modelos</h1> */}
+                            <CategoryItem categories={categories} />
+                        </>
+
+                    )
+                )}
         </div>
     );
 };

@@ -1,23 +1,18 @@
-import { Link } from "react-router-dom";
+import styles from './styles.module.css';
+import Category_products1 from './category_products1';
+
 
 const CategoryProduct = ({ products }) => {
 
     return (
         <>
-            <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+            <div className={styles.container}>
                 {products.map(product => (
-                    <div key={product._id} style={{ textAlign: "center", cursor: "pointer" }}>
-                        <img
-                            src={`http://localhost:8080/products/${product.category_product}/${product.thumbnails[0]}`}
-                            alt={product.title}
-                            width={100}
-                        />
-                        <p>{product.title}</p>
-                        <p>{product.price}</p>
-                        <Link to={`/productos/${product._id}`}>
-                            <button>Ver Detalle</button>
-                        </Link>
-                    </div>
+                    <Category_products1
+                        key={product._id}
+                        product={product}
+                        style={{ textAlign: "center", cursor: "pointer" }}
+                    />
                 ))}
             </div>
         </>

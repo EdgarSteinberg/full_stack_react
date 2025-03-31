@@ -1,0 +1,19 @@
+.cardContainer {
+    width: 80%;
+    border: 1px solid #D3D3D3;
+    padding: 10px;
+    display: flex;
+    margin: 0 auto;
+    border-radius: 7px;
+}
+
+.cardDetail {
+    flex: 1;
+    padding: 10px;
+    border-right: 1px solid #D3D3D3;
+}
+
+.text {
+    font-size: 20px;
+    font-weight: bold;
+}

@@ -1,0 +1,51 @@
+/* styles.module.css */
+
+.itemListContainer {
+    display: flex;             /* Activa Flexbox */
+    flex-wrap: wrap;           /* Permite que los items se ajusten cuando no hay suficiente espacio */
+    justify-content: space-around; /* Distribuye el espacio entre los items */
+    gap: 20px;                 /* Espacio entre las tarjetas */
+    padding: 20px;             /* Espaciado dentro del contenedor */
+}
+
+.skeletonCard {
+    width: 18rem; /* Igual al tamaño de la tarjeta */
+    height: 350px; /* Ajusta según el tamaño de la tarjeta */
+    border-radius: 10px; /* Borde redondeado igual a las tarjetas */
+    background: linear-gradient(90deg, #d3d3d3 25%, #b0b0b0 50%, #d3d3d3 75%);
+    animation: pulse 1.5s infinite ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin-bottom: 30px;
+}
+
+/* Animación para el efecto de carga */
+@keyframes pulse {
+    0% {
+        background-color: #d3d3d3;  /* Gris claro */
+    }
+    50% {
+        background-color: #b0b0b0;  /* Gris más oscuro */
+    }
+    100% {
+        background-color: #d3d3d3;  /* Gris claro */
+    }
+}
+
+.skeletonCardBody {
+    padding: 20px;
+    text-align: center;
+}
+
+.skeletonTitle, .skeletonText, .skeletonButton {
+    background-color: #d3d3d3;
+    height: 20px;
+    margin: 5px auto;
+    border-radius: 5px;
+    width: 80%;  /* Ajusta al tamaño de los textos */
+}
+
+.skeletonButton {
+    width: 60%; /* Botón más pequeño */
+    height: 40px;
+}
+

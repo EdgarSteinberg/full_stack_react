@@ -1,73 +1,89 @@
-import { useEffect, useState } from "react";
+import styles from './styles.module.css';
+import { useContext, useEffect, useState } from "react";
 import ProductListItem from "./productListItem";
+import { CartContext } from "../../context/cartContext";
+import SkeletonCard from '../skeleton_card/skeleton_card';
+import NotProfile from '../notProfile/notProfile';
 
-// Función para obtener el valor de una cookie por su nombre
-const getCookie = (name) => {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-};
 
 const ProductList = () => {
-    const [products, setProducts] = useState([]);
+    const { profile, products, updatedProducts } = useContext(CartContext);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
+
+    if (!profile) { return (<NotProfile />); }
 
     useEffect(() => {
         fetch("http://localhost:8080/api/products")
             .then(response => response.json())
-            .then(json => setProducts(json.payload))
+            .then(json => updatedProducts(json.payload))
             .catch(error => setError(error.message))
             .finally(() => setLoading(false));
-    }, []);
+    }, [profile]);
 
     // Función para eliminar un producto
     const handleDelete = (productId) => {
         console.log("ID del producto a eliminar:", productId);
-        const token = getCookie("coderCookieToken"); // Obtener el token desde la cookie
-        console.log("Token enviado en la solicitud:", token);
-    
+        // const token = getCookie("coderCookieToken"); // Obtener el token desde la cookie
+        // console.log("Token enviado en la solicitud:", token);
+
         fetch(`http://localhost:8080/api/products/${productId}`, {
             method: 'DELETE',
             headers: {
-                "Authorization": `Bearer ${token}`,
-                "Content-Type": "application/json",
+                "Content-Type": "application/json"
             },
             credentials: 'include',  // Asegúrate de incluir las cookies en la solicitud
         })
             .then(response => {
-              // console.log("Respuesta del servidor:", response);
+                // console.log("Respuesta del servidor:", response);
                 if (!response.ok) {
-                    return response.text().then(text => {
-                        throw new Error(text || "Error al eliminar el producto");
+                    return response.json().then(errorData => {
+                        throw new Error(errorData.message || "Error al eliminar el producto");
                     });
                 }
                 return response.json(); // Si la respuesta es válida, procesa como JSON
             })
             .then(data => {
                 console.log("Datos después de eliminar:", data);
-                setProducts(products.filter(product => product._id !== productId));
+                // setProducts(products.filter(product => product._id !== productId));
+                updatedProducts(products.filter(product => product._id !== productId));
             })
             .catch(error => {
                 console.error("Error al eliminar el producto:", error);
-                setError(error.message);
+                alert(error.message); 
             });
     };
-    
+
 
     return (
-        <>
+        <div className={styles.container}>
+
             {loading ? (
-                <p>Cargando...</p>
+                <div className={styles.itemListContainer}>
+                    <SkeletonCard />
+                </div>
             ) : error ? (
                 <p>Error: {error}</p>
             ) : (
-                    <ProductListItem products={products} handleDelete={handleDelete}/> 
-                    
-               ) }
-            
-        </>
+                <ProductListItem products={products} handleDelete={handleDelete} />
+
+            )}
+
+        </div>
     );
 };
 
 export default ProductList;
+
+
+
+
+
+
+// Función para obtener el valor de una cookie por su nombre
+// const getCookie = (name) => {
+//     const value = `; ${document.cookie}`;
+//     const parts = value.split(`; ${name}=`);
+//     if (parts.length === 2) return parts.pop().split(';').shift();
+// };

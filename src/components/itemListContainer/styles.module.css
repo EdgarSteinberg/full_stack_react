@@ -1,0 +1,76 @@
+h1 {
+    text-align: center;
+}
+
+.container {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 7px;
+}
+
+.card {
+    border: 3px solid black;
+    border-radius: 7px;
+    text-align: center;
+    margin: 7px;
+    padding: 7px;
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+    /* También se establece la altura fija */
+    object-fit: contain;
+    /* Recorta la imagen para llenar el espacio sin deformarla */
+    border-radius: 10px;
+    /* Opcional: bordes redondeados */
+
+}
+
+.itemListContainer {
+    display: flex;             /* Activa Flexbox */
+    flex-wrap: wrap;           /* Permite que los items se ajusten cuando no hay suficiente espacio */
+    justify-content: space-around; /* Distribuye el espacio entre los items */
+    gap: 20px;                 /* Espacio entre las tarjetas */
+    padding: 20px;             /* Espaciado dentro del contenedor */
+}
+
+
+.cardNew{
+    width: 18rem ;
+    align-items: center;
+    text-align: center;
+    margin: 7px;
+}
+
+.title{
+    text-align: center;
+    align-items: center;
+}
+
+.cardNew {
+    width: 18rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+.cardNew:hover {
+    transform: scale(1.05);
+}
+
+.image {
+    height: 200px;
+   
+}
+
+.stars {
+    margin: 5px 0;
+    color: #FFD700; /* Amarillo dorado para las estrellas */
+    font-size: 16px;
+    font-weight: bold;
+}

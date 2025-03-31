@@ -1,0 +1,18 @@
+
+
+.itemContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 50%; */
+    margin: 0 auto;
+}
+
+.card{
+    margin: 7%;
+}
+
+.title{
+    text-align: center;
+    font-weight: bolder;
+}

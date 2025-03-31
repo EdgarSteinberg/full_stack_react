@@ -1,0 +1,31 @@
+
+
+.cardContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+     
+}
+
+
+.title{
+    text-align: center;
+    font-weight: bolder;
+}
+
+
+.deleteAllButton {
+    margin-bottom: 20px; /* Espacio entre el título y el botón */
+    width: 100%; /* Hace que el botón ocupe todo el ancho disponible */
+}
+
+
+.itemListContainer {
+    display: flex;            
+    flex-wrap: wrap;            
+    justify-content: space-around;  
+    gap: 20px;                  
+    padding: 20px;             
+}
+

@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0 ;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; /* Separar las dos listas (buscador y menú) */
+    align-items: center;
+    width: 90%;
+    padding: 10px;
+    border-bottom: 1px solid rgba(161, 161, 161, 0.493);
+    margin: 0 auto;
+}
+
+.search {
+    display: flex;
+    justify-content: center; /* Centra el input */
+    align-items: center;
+    flex-grow: 1; /* Hace que ocupe el espacio disponible */
+}
+
+.searchItem {
+    list-style-type: none; /* Elimina el punto */
+    
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end; /* Alinea las rutas a la derecha */
+}
+
+.menuItem {
+    list-style-type: none;
+
+}
+
+.cartItem{
+    background-color: black;
+    color: wheat;
+    border-radius: 50%;
+    padding: 2px 6px;
+}
+
+ul, li {
+    list-style-type: none; /* Elimina el punto */
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+Link{
+   color: black;
+}

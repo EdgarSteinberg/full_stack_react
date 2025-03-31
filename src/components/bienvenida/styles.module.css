@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+
+}
+
+.sidebar {
+  width: 10%;
+  /* Ocupa el 25% del ancho de la pantalla */
+  min-width: 200px;
+  /* Evita que se haga demasiado pequeño en pantallas pequeñas */
+  margin-left: 10%;
+  margin-top: 5px;
+}
+
+.content {
+  flex: 1;
+  /* Ocupa todo el espacio restante */
+  display: flex;
+  flex-wrap: wrap;
+  /* Para que las tarjetas se ajusten si no caben */
+
+}
+
+
+.item {
+  display: flex;
+  /* Activa Flexbox */
+  flex-wrap: wrap;
+  /* Permite que los items se ajusten cuando no hay suficiente espacio */
+  justify-content: space-around;
+  /* Distribuye el espacio entre los items */
+  gap: 20px;
+  /* Espacio entre las tarjetas */
+  padding: 20px;
+  background-color: #f4faf4;
+  /* Espaciado dentro del contenedor */
+}

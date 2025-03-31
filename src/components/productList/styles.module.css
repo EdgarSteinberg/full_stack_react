@@ -1,0 +1,32 @@
+h1{
+    text-align: center;
+}
+.itemListContainer {
+    display: flex;             /* Activa Flexbox */
+    flex-wrap: wrap;           /* Permite que los items se ajusten cuando no hay suficiente espacio */
+    justify-content: space-around; /* Distribuye el espacio entre los items */
+    gap: 20px;                 /* Espacio entre las tarjetas */
+    padding: 20px;             /* Espaciado dentro del contenedor */
+}
+
+.container {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+
+.card{
+    align-items: center;
+    text-align: center;
+}
+
+.image {
+    width: 200px;
+    height: 200px; /* También se establece la altura fija */
+    object-fit:contain; /* Recorta la imagen para llenar el espacio sin deformarla */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+  
+}
