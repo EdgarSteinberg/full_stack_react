@@ -28,7 +28,7 @@ const Ticket = () => {
         setError(null); // Reseteamos el error antes de hacer la petición
 
         try {
-            const response = await fetch('http://localhost:8080/api/tickets', {
+            const response = await fetch('https://full-stack-smf0.onrender.com/api/tickets', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

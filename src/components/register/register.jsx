@@ -3,7 +3,7 @@ import RegisterItem from './registerItem';
 
 const Register = () => {
     const handleLoginWithGitHub = () => {
-        window.location.href = "http://localhost:8080/api/github";
+        window.location.href = "https://full-stack-smf0.onrender.com/api/github";
     };
 
     const [form, setForm] = useState({
@@ -20,7 +20,7 @@ const Register = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:8080/api/users/register', {
+            const response = await fetch('https://full-stack-smf0.onrender.com/api/users/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

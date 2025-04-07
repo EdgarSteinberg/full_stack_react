@@ -4,14 +4,14 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Badge from 'react-bootstrap/Badge';
 
-const Category_products1 = ({ product, title, purchases }) => {
+const Category_products1 = ({ product, title }) => {
 
     return (
         <div >
             <h4>{title}</h4>
             <Card className={styles.cardCategorie}>
                 <Card.Img variant="top"
-                    src={`http://localhost:8080/products/${product.category_product}/${product.thumbnails[0]}`}
+                    src={`https://full-stack-smf0.onrender.com/products/${product.category_product}/${product.thumbnails[0]}`}
                     alt={product.title}
                     className={styles.imagex} />
                 <Card.Body>

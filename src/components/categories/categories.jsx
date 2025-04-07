@@ -14,8 +14,8 @@ const Categories = () => {
 
     // La URL para obtener las categorías o los productos dependiendo si 'category' está presente
     const uri = category
-        ? `http://localhost:8080/api/products/category/${category}` // Si 'category' está presente, obtenemos los productos de esa categoría
-        : "http://localhost:8080/api/categories"; // Si no, obtenemos las categorías
+        ? `https://full-stack-smf0.onrender.com/api/products/category/${category}` // Si 'category' está presente, obtenemos los productos de esa categoría
+        : "https://full-stack-smf0.onrender.com/api/categories"; // Si no, obtenemos las categorías
 
     useEffect(() => {
         setLoading(true);  // Indicamos que estamos cargando los datos

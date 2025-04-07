@@ -10,7 +10,7 @@ const Category_item1 = ({ cat }) => {
                 <div className={styles.imageContainer}>
                     <Card.Img 
                         variant="top" 
-                        src={`http://localhost:8080/products/${cat.category_name}/${encodeURIComponent(cat.category_image[0])}`} 
+                        src={`https://full-stack-smf0.onrender.com/products/${cat.category_name}/${encodeURIComponent(cat.category_image[0])}`} 
                         alt={cat.category_name} 
                         className={styles.image} 
                     />

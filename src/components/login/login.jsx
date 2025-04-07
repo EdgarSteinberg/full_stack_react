@@ -14,7 +14,7 @@ const Login = () => {
 
 
     const handleLoginWithGitHub = () => {
-        window.location.href = "http://localhost:8080/api/github";
+        window.location.href = "https://full-stack-smf0.onrender.com/api/github";
     };
 
     const handleChange = (e) => {
@@ -28,7 +28,7 @@ const Login = () => {
         setErrorMessage(''); // Resetear error antes de intentar loguear
 
         try {
-            const response = await fetch('http://localhost:8080/api/users/login', {
+            const response = await fetch('https://full-stack-smf0.onrender.com/api/users/login', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -16,8 +16,8 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         const url = category
-            ? `http://localhost:8080/api/products/category/${category}`
-            : "http://localhost:8080/api/products"; // Si no hay categoría, obtiene todos los productos
+            ? `https://full-stack-smf0.onrender.com/api/products/category/${category}`
+            : "https://full-stack-smf0.onrender.com/api/products"; // Si no hay categoría, obtiene todos los productos
 
         fetch(url)
             .then(response => response.ok ? response.json() : Promise.reject('Error al obtener productos'))

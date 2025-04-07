@@ -5,7 +5,7 @@ import HeaderItem from "./headerItem";
 
 const handleLogout = async () => {
     try {
-        const response = await fetch("http://localhost:8080/api/users/logout", {
+        const response = await fetch("https://full-stack-smf0.onrender.com/api/users/logout", {
             method: "POST",
             credentials: "include",
         });

@@ -18,7 +18,7 @@ const Users = () => {
     }
 
     useEffect(() => {
-        fetch('http://localhost:8080/api/users')
+        fetch('https://full-stack-smf0.onrender.com/api/users')
             .then(async response => {
                 if (!response.ok) {
                     const errorData = await response.json();
@@ -40,7 +40,7 @@ const Users = () => {
 
     const handleDelete = async (uid) => {
         try {
-            const response = await fetch(`http://localhost:8080/api/users/${uid}`, {
+            const response = await fetch(`https://full-stack-smf0.onrender.com/api/users/${uid}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json"
@@ -66,7 +66,7 @@ const Users = () => {
         try {
             const newRole = currentRole === "user" ? "premium" : "user"; // Alternar rol
 
-            const response = await fetch(`http://localhost:8080/api/users/premium/${uid}`, {
+            const response = await fetch(`https://full-stack-smf0.onrender.com/api/users/premium/${uid}`, {
                 method: "PUT",
                 credentials: "include",
                 headers: {
@@ -96,7 +96,7 @@ const Users = () => {
     };
     const handleAllDelete = async () => {
         try {
-            const response = await fetch("http://localhost:8080/api/users", {
+            const response = await fetch("https://full-stack-smf0.onrender.com/api/users", {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json"

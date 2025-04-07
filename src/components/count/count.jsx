@@ -32,7 +32,7 @@ const Count = ({ onAdd, product }) => {
                     <div className={styles.cardImage}>
                         <Card.Img
                             variant="top"
-                            src={`http://localhost:8080/products/${product.category_product}/${product.thumbnails[0]}`}
+                            src={`https://full-stack-smf0.onrender.com/products/${product.category_product}/${product.thumbnails[0]}`}
                             alt={product.title}
                             className={styles.img}
                         />

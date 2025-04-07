@@ -22,7 +22,7 @@ const Contactanos = () => {
 
         // Enviar los datos al backend
         try {
-            const response = await fetch('http://localhost:8080/api/messages', {
+            const response = await fetch('https://full-stack-smf0.onrender.com/api/messages', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

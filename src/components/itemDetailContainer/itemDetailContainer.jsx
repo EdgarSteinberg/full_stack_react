@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:8080/api/products/${id}`)
+        fetch(`https://full-stack-smf0.onrender.com/api/products/${id}`)
             .then(response => {
                 if (!response.ok) {
                     return "Error al obtener el producto"

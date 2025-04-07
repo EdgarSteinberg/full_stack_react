@@ -74,7 +74,7 @@ export const CartComponentContext = ({ children }) => {
     useEffect(() => {
         setLoading(true);
 
-        fetch("http://localhost:8080/api/users/profile/profile", {
+        fetch("https://full-stack-smf0.onrender.com/api/users/profile/profile", {
             method: "GET",
             credentials: "include",
         })

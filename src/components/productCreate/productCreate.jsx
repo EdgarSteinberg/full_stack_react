@@ -22,7 +22,7 @@ const ProductCreate = () => {
 
     // Cargar categorías desde la API
     useEffect(() => {
-        fetch("http://localhost:8080/api/categories")
+        fetch("https://full-stack-smf0.onrender.com/api/categories")
             .then(response => {
                 if (!response.ok) throw new Error("Error al cargar las categorías");
                 return response.json();
@@ -62,7 +62,7 @@ const ProductCreate = () => {
         });
 
         try {
-            const response = await fetch("http://localhost:8080/api/products", {
+            const response = await fetch("https://full-stack-smf0.onrender.com/api/products", {
                 method: "POST",
                 credentials: 'include',
                 body: formData

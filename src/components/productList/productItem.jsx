@@ -11,7 +11,7 @@ const ProductItem = ({ pr, handleDelete }) => {
                 {pr.thumbnails?.length > 0 && (
                     <Card.Img
                         variant="top"
-                        src={`http://localhost:8080/products/${pr.category_product}/${pr.thumbnails[0]}`}
+                        src={`https://full-stack-smf0.onrender.com/products/${pr.category_product}/${pr.thumbnails[0]}`}
                         alt={`${pr.title} 1`}
                         className={styles.image}
                     />

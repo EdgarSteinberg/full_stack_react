@@ -32,7 +32,7 @@ const Filtros = () => {
     }, []);
 
     useEffect(() => {
-        fetch('http://localhost:8080/api/products')
+        fetch('https://full-stack-smf0.onrender.com/api/products')
             .then(response => {
                 if (!response.ok) {
                     throw new Error("Error al obtener los productos");

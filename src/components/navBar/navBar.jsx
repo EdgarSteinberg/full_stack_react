@@ -47,7 +47,7 @@ const NavBar = () => {
                             <Nav.Link as={Link} to="/uploadDocs" className={styles.menuLink}>Acceder a Cuenta Premium</Nav.Link>
                             <Nav.Link as={Link} to="/postProduct" className={styles.menuLink}>Administrar Productos</Nav.Link>
                             <Nav.Link as={Link} to="/users" className={styles.menuLink}>Administrar Usuarios</Nav.Link>
-                            <Nav.Link as={Link} to="http://localhost:8080/api/docs/#/" target="_blank" className={styles.menuLink}>Swagger</Nav.Link>
+                            <Nav.Link as={Link} to="https://full-stack-smf0.onrender.com/api/docs/#/" target="_blank" className={styles.menuLink}>Swagger</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

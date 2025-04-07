@@ -22,7 +22,7 @@ const Cart = () => {
                         {cart.map((pr) => (
                             <div key={pr._id} className={styles.container}>
                                 <Card className={styles.card}>
-                                    <Card.Img className={styles.img} variant="top" src={`http://localhost:8080/products/${pr.category_product}/${pr.thumbnails[0]}`} alt={pr.title} />
+                                    <Card.Img className={styles.img} variant="top" src={`https://full-stack-smf0.onrender.com/products/${pr.category_product}/${pr.thumbnails[0]}`} alt={pr.title} />
                                     <Card.Body>
                                         <Card.Title>{pr.title}</Card.Title>
                                         <ListGroup variant="flush">

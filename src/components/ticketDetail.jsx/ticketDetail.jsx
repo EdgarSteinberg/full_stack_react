@@ -9,7 +9,7 @@ const TicketDetail = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`http://localhost:8080/api/tickets/${id}`) // Usar ticketId en la URL
+        fetch(`https://full-stack-smf0.onrender.com/api/tickets/${id}`) // Usar ticketId en la URL
             .then(response => response.json())
             .then(data => {
                 console.log("Datos del ticket:", data);

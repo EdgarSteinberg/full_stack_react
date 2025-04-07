@@ -28,7 +28,7 @@ const UploadDocs = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:8080/api/users/${profile._id}/documents`, {
+      const response = await fetch(`https://full-stack-smf0.onrender.com/api/users/${profile._id}/documents`, {
         method: "POST",
         body: formData,
         credentials: "include",

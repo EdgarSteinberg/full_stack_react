@@ -10,7 +10,7 @@ const RecoverPassword = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch("http://localhost:8080/api/users/recover-password", {
+            const response = await fetch("https://full-stack-smf0.onrender.com/api/users/recover-password", {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json"

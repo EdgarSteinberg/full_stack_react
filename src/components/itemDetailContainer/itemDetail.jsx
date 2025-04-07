@@ -27,7 +27,7 @@ const ItemDetail = ({ product }) => {
             const cartId = profile.cart._id;  // Accedes al carrito del perfil
     
             // Enviar datos al backend para agregar el producto al carrito
-            const response = await fetch(`http://localhost:8080/api/carts/${cartId}/products/${product._id}`, {
+            const response = await fetch(`https://full-stack-smf0.onrender.com/api/carts/${cartId}/products/${product._id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

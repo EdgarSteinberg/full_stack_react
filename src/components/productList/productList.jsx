@@ -16,7 +16,7 @@ const ProductList = () => {
     if (!profile) { return (<NotProfile />); }
 
     useEffect(() => {
-        fetch("http://localhost:8080/api/products")
+        fetch("https://full-stack-smf0.onrender.com/api/products")
             .then(response => response.json())
             .then(json => updatedProducts(json.payload))
             .catch(error => setError(error.message))
@@ -29,7 +29,7 @@ const ProductList = () => {
         // const token = getCookie("coderCookieToken"); // Obtener el token desde la cookie
         // console.log("Token enviado en la solicitud:", token);
 
-        fetch(`http://localhost:8080/api/products/${productId}`, {
+        fetch(`https://full-stack-smf0.onrender.com/api/products/${productId}`, {
             method: 'DELETE',
             headers: {
                 "Content-Type": "application/json"
