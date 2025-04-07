@@ -42,13 +42,13 @@ const Login = () => {
     
             if (data.status === "success") {
                 login(data.payload); // Guardar sesión en el contexto
-                window.location.href = "http://localhost:5173/";
+                window.location.href = "https://mobilematrix.netlify.app/";
             } else {
                 setErrorMessage(data.error || "Error desconocido");
             }
 
             if (data.status === "success") {
-                window.location.href = "http://localhost:5173/";
+                window.location.href = "https://mobilematrix.netlify.app/";
             }
 
         } catch (error) {

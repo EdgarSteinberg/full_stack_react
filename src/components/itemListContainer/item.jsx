@@ -12,7 +12,7 @@ const Item = ({ _id, title, price, thumbnails, category_product, stock, purchase
                 {thumbnails?.length > 0 && category_product && (
                     <Card.Img 
                         variant="top" 
-                        src={`http://localhost:8080/products/${category_product}/${thumbnails[0]}`} 
+                        src={`https://full-stack-smf0.onrender.com/products/${category_product}/${thumbnails[0]}`} 
                         alt={title} 
                         className={styles.image} 
                     />

@@ -108,7 +108,7 @@ const Users = () => {
             if (data.status === "success") { // Cambié la condición
                 Swal.fire({ icon: "success", title: "Éxito", text: "Usuarios eliminados correctamente" });
 
-                window.location.href = "http://localhost:5173/users";
+                window.location.href = "https://mobilematrix.netlify.app/users";
             } else {
                 setError(data.message || "Error al eliminar los usuarios");
             }
