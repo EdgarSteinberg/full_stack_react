@@ -24,45 +24,41 @@
 /* Estiliza los enlaces del menú */
 .menuLink {
   font-size: 14px;
-  color: black ;
+  color: black;
   text-decoration: none;
   border-radius: 20px;
-
 }
 
 /* Hover en los enlaces y en el dropdown */
-.menuLink:hover, 
-#nav-dropdown .dropdown-toggle:hover {
+.menuLink:hover,
+.menuLink.active {
   color: white !important;
   background-color: black !important;
   border-radius: 20px;
 }
 
-/* Asegura que los ítems dentro del dropdown tengan el mismo estilo 
-#nav-dropdown .dropdown-item {
-  font-size: 16px;
-  color: black !important;
-  background-color: white !important; 
-  text-decoration: none;
-  border-radius: 20px;
-}
-*/
-/* Hover en los ítems del dropdown  
-#nav-dropdown .dropdown-item:hover {
-  background-color: black !important;
-  color: white !important;
+.flex {
+  display: flex;
 }
 
-*/
-
+@media screen and (max-width: 1000px) {
+  .flex {
+    display: flex;
+    flex-direction: column;
+  }
+  /* .menuLink {
+   padding: 1px;
+  } */
+}
 
 @media screen and (max-width: 900px) {
+
   .nav {
     flex-direction: column;
     /* Cambia a columna en dispositivos pequeños */
     align-items: flex-start;
     /* Alinea al principio */
-    padding: 1rem;
+    
   }
 
   .menu {

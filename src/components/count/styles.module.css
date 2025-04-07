@@ -23,15 +23,21 @@
      justify-content: space-between;
  }
 
+ .cardImage{
+    flex: 1;
+    overflow: hidden;
+ }
+
  .img {
      margin-top: 10px;
-     width: 200px;
-     height: 200px;
+     width: 100%;
      object-fit: contain;
+ 
  }
 
  .contador {
      display: flex;
+     justify-content: center;
      align-items: center;
      gap: 10px;
      margin-bottom: 15px;
@@ -47,3 +53,40 @@
  p {
      margin: 10px;
  }
+
+ .title{
+    font-size: 1.5rem;
+    font-weight: bold;
+ }
+
+ @media screen and (max-width: 700px) {
+    .cardStyles {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        
+    }
+ 
+    /*funciona para la imagen*/
+    .cardImage, .card, .contador{ 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+ }
+
+@media screen and (max-width: 500px) {
+    .img {
+        margin-top: 10px;
+        width: 150px;
+        object-fit: cover;
+    }
+    .card{
+        padding: 1px;
+    }
+
+    .title{
+        font-size: 16px;
+    }
+}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ContactoForm from "./contactoForm";
 import styles from './styles.module.css';
+import Swal from "sweetalert2";
 
 const Contactanos = () => {
     const [form, setForm] = useState({
@@ -15,7 +16,7 @@ const Contactanos = () => {
 
         // Validación básica antes de enviar el formulario
         if (!form.first_name || !form.last_name || !form.email || !form.message) {
-            alert("Todos los campos son obligatorios");
+               Swal.fire({ icon: "success", title: "Éxito", text: "Todos los campos son obligatorios" });
             return;
         }
 
@@ -31,7 +32,7 @@ const Contactanos = () => {
 
             const data = await response.json();
             if (response.ok) {
-                alert("Mensaje enviado con éxito");
+                Swal.fire("Mensaje enviado con éxito!");
                 setForm({
                     first_name: '',
                     last_name: '',
@@ -39,10 +40,10 @@ const Contactanos = () => {
                     message: ''
                 });
             } else {
-                alert(data.message || "Error al enviar el mensaje");
+                Swal.fire(data.message || "Error al enviar el mensaje");
             }
         } catch (error) {
-            alert("Hubo un problema al enviar el mensaje");
+            Swal.fire("Hubo un problema al enviar el mensaje");
         }
     }
 
@@ -61,7 +62,8 @@ const Contactanos = () => {
             <ContactoForm
                 handleSubmit={handleSubmit}
                 onChange={onChange}
-                form={form} />
+                form={form}
+            />
         </>
     );
 }

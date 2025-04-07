@@ -5,6 +5,7 @@ import { CartContext } from "../../context/cartContext";
 import { useNavigate } from "react-router-dom";
 import Spinner from 'react-bootstrap/Spinner';
 import styles from './styles.module.css';
+import Swal from "sweetalert2";
 
 const ItemDetail = ({ product }) => {
     const [addQuantity, setAddQuantity] = useState(0);
@@ -19,7 +20,7 @@ const ItemDetail = ({ product }) => {
         const updatedProduct = { ...product, quantity, total }; 
         addProductContext(updatedProduct);
         setAddProduct(true);
-        alert("Producto agregado al carrito");
+        Swal.fire("Producto agregado al carrito");
     
         try {
             // Aquí haces la petición POST al backend

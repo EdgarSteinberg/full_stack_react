@@ -3,6 +3,7 @@ import ProductList from "../productList/productList";
 import { CartContext } from "../../context/cartContext";
 import ProductForm from "./productForm";
 import styles from './styles.module.css';
+import Swal from "sweetalert2";
 
 const ProductCreate = () => {
     const { updatedProducts, products, setProducts } = useContext(CartContext);
@@ -91,12 +92,12 @@ const ProductCreate = () => {
                     thumbnail: null
                 });
                 setSelectedCategory("");
-                alert("Producto creado correctamente");
+                Swal.fire({ icon: "success", title: "Éxito", text: "Producto creado correctamente" });
             } else {
-                console.error("Respuesta inesperada del servidor:", data);
+                Swal.fire({ icon: "error", title: "Error", text: "Respuesta inesperada del servidor" });
             }
         } catch (error) {
-            console.error("Error:", error);
+            Swal.fire({ icon: "error", title: "Error", text: `Ocurrió un error: ${error.message}` });
         }
     };
 
@@ -111,9 +112,9 @@ const ProductCreate = () => {
                 form={form}
                 categories={categories}
             />
-              <ProductList />
-          
-          
+            <ProductList />
+
+
         </>
     );
 };

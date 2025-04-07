@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 import { CartContext } from '../../context/cartContext';
 import ProcesarCompraForm from './procesarCompraForm';
+import Swal from "sweetalert2";
 
 
 const ProcesarCompra = ({ handleTickets }) => {
@@ -8,7 +9,7 @@ const ProcesarCompra = ({ handleTickets }) => {
 
 
     // Generar el string con todos los títulos y precios
-    const cartDetails = cart.map(item => `${item.title} - $${item.price}`).join("\n");
+    const cartDetails = cart.map(item => `${item.title} - $${item.price} -${item.quantity}`).join("\n");
 
     // Calcular el total del carrito
     const totalAmount = cart.reduce((acc, item) => acc + item.total, 0);
@@ -35,12 +36,12 @@ const ProcesarCompra = ({ handleTickets }) => {
             !form.confirm_email.trim() ||
             !emailMatch
         ) {
-            alert("Por favor completa todos los campos obligatorios y asegúrate de que los correos coincidan.");
+            Swal.fire({ icon: "error", title: "Error", text: "Por favor completa todos los campos obligatorios y asegúrate de que los correos coincidan." });
             return;
         }
 
-        console.log(form);
-        console.log("Ejecutando handleTicket...");
+        //console.log(form);
+        //console.log("Ejecutando handleTicket...");
         // Aquí llamamos a handleTicket después de validar el formulario
         handleTickets();
 

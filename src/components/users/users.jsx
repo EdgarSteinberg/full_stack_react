@@ -5,12 +5,13 @@ import styles from './styles.module.css';
 import { Button } from "react-bootstrap";
 import { CartContext } from "../../context/cartContext";
 import NotProfile from "../notProfile/notProfile";
+import Swal from "sweetalert2";
 
 const Users = () => {
     const [users, setUsers] = useState([]);  // Cambié `user` a `users` (es un array)
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const {profile} = useContext(CartContext);
+    const { profile } = useContext(CartContext);
 
     if (!profile || profile.role !== "admin") {
         return <NotProfile />;
@@ -49,7 +50,7 @@ const Users = () => {
             const data = await response.json(); // Asegurar que se obtiene el JSON
 
             if (data.status === "success") {
-                alert("Usuario eliminado correctamente");
+                Swal.fire({ icon: "success", title: "Éxito", text: "Usuario eliminado correctamente" });
                 setUsers(users.filter(user => user._id !== uid)); // Actualizar el estado tras eliminar
             } else {
                 throw new Error(data.message || "Error al eliminar el usuario");
@@ -57,7 +58,7 @@ const Users = () => {
 
         } catch (error) {
             console.error("Error al eliminar el usuario:", error);
-            alert(error.message); // Mostrar error en alerta
+            Swal.fire({ icon: "error", title: "Error", text: `Ocurrió un error: ${error.message}` });
         }
     };
 
@@ -77,7 +78,7 @@ const Users = () => {
             const data = await response.json();
 
             if (data.status === "success") {  // Asegúrate de que el backend devuelve "status"
-                alert("Rol de usuario actualizado");
+                Swal.fire({ icon: "success", title: "Éxito", text: "Rol de usuario actualizado" });
 
                 setUsers(prevUsers =>
                     prevUsers.map(user =>
@@ -89,7 +90,8 @@ const Users = () => {
             }
         } catch (error) {
             console.error("Error al actualizar el rol:", error);
-            alert(error.message);
+            Swal.fire({ icon: "error", title: "Error", text: `Ocurrió un error: ${error.message}` });
+
         }
     };
     const handleAllDelete = async () => {
@@ -104,7 +106,8 @@ const Users = () => {
             const data = await response.json();
 
             if (data.status === "success") { // Cambié la condición
-                alert("Usuarios eliminados correctamente");
+                Swal.fire({ icon: "success", title: "Éxito", text: "Usuarios eliminados correctamente" });
+
                 window.location.href = "http://localhost:5173/users";
             } else {
                 setError(data.message || "Error al eliminar los usuarios");
@@ -112,7 +115,8 @@ const Users = () => {
         } catch (error) {
             console.error("Error al eliminar los usuarios:", error);
             setError(error.message);
-            alert(error.message);
+            Swal.fire({ icon: "error", title: "Error", text: `Ocurrió un error: ${error.message}` });
+
         }
     };
 

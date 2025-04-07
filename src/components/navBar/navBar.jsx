@@ -15,13 +15,13 @@ const NavBar = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto" style={{ flex: 1, display: 'flex' }}>
                             {/* Menú de navegación izquierda */}
-                            <div style={{ display: 'flex' }}>
+                            <div className={styles.flex}>
                                 <Nav.Link as={Link} to="/" className={styles.menuLink}>Mi Tienda</Nav.Link>
                                 <Nav.Link as={Link} to="/productos" className={styles.menuLink}>Smartphones</Nav.Link>
                                 <Nav.Link as={Link} to="/contactanos" className={styles.menuLink}>Contactanos</Nav.Link>
 
                                 <NavDropdown
-                                    title={<span className={styles.menuLink}>Categorías</span>}
+                                    title={<span className={`${styles.menuLink} ${showDropdown ? styles.active : ''}`}>Categorías</span>}
                                     id="nav-dropdown"
                                     className={styles.menuLink}
                                     show={showDropdown}

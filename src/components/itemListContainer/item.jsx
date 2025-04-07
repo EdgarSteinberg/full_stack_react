@@ -27,7 +27,8 @@ const Item = ({ _id, title, price, thumbnails, category_product, stock, purchase
 
                     {/* Estrellas según cantidad de compras */}
                     <div className={styles.stars}>
-                        {"★".repeat(Math.min(purchases, 5)).padEnd(5, "☆")} ({purchases})
+                        {/* {"★".repeat(Math.min(purchases, 5)).padEnd(5, "☆")} ({purchases}) */}
+                        {"★".repeat(Math.min(purchases || 0, 5)).padEnd(5, "☆")} ({purchases || 0})
                     </div>
 
                     <Card.Text style={{ color: 'green' }}>

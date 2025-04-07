@@ -1,0 +1,15 @@
+
+
+.cardContainer{
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+}
+
+
+.iconos{
+margin-top: 10px;
+display: flex;
+gap: 15px;
+}

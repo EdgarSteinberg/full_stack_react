@@ -1,14 +1,21 @@
-.itemContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .margin{
-    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 .card{
-    width: 25rem;
-    margin: 7rem;
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+
+@media screen and (max-width: 500px) {
+    .card{
+        width: 100%;
+        padding: 10px;
+    }
+    
 }

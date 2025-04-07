@@ -1,21 +1,15 @@
-h1 {
+h4{
     text-align: center;
 }
 
 .itemListContainer {
     display: flex;
-    /* Activa Flexbox */
     flex-wrap: wrap;
-    /* Permite que los items se ajusten cuando no hay suficiente espacio */
     justify-content: space-around;
-    /* Distribuye el espacio entre los items */
     gap: 20px;
-    /* Espacio entre las tarjetas */
     padding: 20px;
     background-color: #f4faf4;
-    /* Espaciado dentro del contenedor */
 }
-
 
 .container {
     width: 90%;
@@ -57,14 +51,12 @@ h1 {
     margin: 7px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
     border-radius: 10px;
-
-
 }
 
 
-.image {
+.imagex {
     height: 200px;
-   
+    object-fit: contain;
 }
 
 .stars {
@@ -90,6 +82,8 @@ h1 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .cardCategorie:hover {
@@ -135,4 +129,11 @@ h1 {
     font-size: 0.9rem;
     color: #555;
     margin-bottom: 10px;
+}
+
+
+@media screen and (max-width: 400px) {
+    .cardCategorie{
+        margin: 0 auto;
+    }
 }

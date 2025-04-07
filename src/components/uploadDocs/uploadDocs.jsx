@@ -54,7 +54,8 @@ const UploadDocs = () => {
         message={message}
         profile={profile}
         loading={loading}
-        handleSubmit={handleSubmit} />
+        handleSubmit={handleSubmit}
+      />
     </>
   );
 };

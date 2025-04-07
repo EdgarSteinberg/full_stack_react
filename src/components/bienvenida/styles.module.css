@@ -10,6 +10,7 @@
   /* Evita que se haga demasiado pequeño en pantallas pequeñas */
   margin-left: 10%;
   margin-top: 5px;
+   
 }
 
 .content {
@@ -34,4 +35,21 @@
   padding: 20px;
   background-color: #f4faf4;
   /* Espaciado dentro del contenedor */
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .sidebar {
+    width: 10%;
+    /* Ocupa el 25% del ancho de la pantalla */
+    min-width: 200px;
+
+     
+  }
 }

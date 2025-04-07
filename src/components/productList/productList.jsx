@@ -4,6 +4,7 @@ import ProductListItem from "./productListItem";
 import { CartContext } from "../../context/cartContext";
 import SkeletonCard from '../skeleton_card/skeleton_card';
 import NotProfile from '../notProfile/notProfile';
+import Swal from "sweetalert2";
 
 
 const ProductList = () => {
@@ -45,13 +46,15 @@ const ProductList = () => {
                 return response.json(); // Si la respuesta es válida, procesa como JSON
             })
             .then(data => {
+                Swal.fire({ icon: "success", title: "Éxito", text: "Producto Eliminado correctamente" });
                 console.log("Datos después de eliminar:", data);
                 // setProducts(products.filter(product => product._id !== productId));
                 updatedProducts(products.filter(product => product._id !== productId));
             })
             .catch(error => {
                 console.error("Error al eliminar el producto:", error);
-                alert(error.message); 
+                Swal.fire({ icon: "error", title: "Error", text: `${error.message}` });
+                 
             });
     };
 

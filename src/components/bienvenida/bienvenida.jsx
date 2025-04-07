@@ -22,41 +22,46 @@ const Bienvenida = () => {
     return (
         <>
 
-            <Carousel style={{ width: "80%", margin: "0  auto" }}>
+            <Carousel style={{ width: "80%", margin: "0 auto" }}>
+                {/* Samsung */}
                 <Carousel.Item style={{ height: "29vh" }}>
                     <img
                         className="d-block w-100"
                         src={samsung}
-                        alt="First slide"
+                        alt="Samsung - Innovación en cada detalle"
                         style={{ height: "100%", objectFit: "cover" }}
                     />
                     <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3>Samsung Galaxy Series</h3>
+                        <p>Innovación, potencia y diseño en cada dispositivo.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
+
+                {/* Apple */}
                 <Carousel.Item style={{ height: "29vh" }}>
                     <img
                         className="d-block w-100"
                         src={apple}
-                        alt="Second slide"
+                        alt="Apple - Tecnología y elegancia"
                         style={{ height: "100%", objectFit: "cover" }}
                     />
                     <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3>Apple iPhone</h3>
+                        <p>El equilibrio perfecto entre rendimiento y elegancia.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
+
+                {/* Sony */}
                 <Carousel.Item style={{ height: "29vh" }}>
                     <img
                         className="d-block w-100"
                         src={sony}
-                        alt="Third slide"
+                        alt="Sony - Calidad e innovación"
                         style={{ height: "100%", objectFit: "cover" }}
                     />
                     <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        <h3>Sony Xperia</h3>
+                        <p>Calidad de imagen, sonido y resistencia inigualables.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>

@@ -1,9 +1,15 @@
 import { useState } from "react";
-import { Button, Card, Form } from "react-bootstrap";
-import styles from './styles.module.css';
+import ResetPasswordItem from "./resetPasswordItem";
+import Swal from "sweetalert2";
+import { useSearchParams  } from "react-router-dom";
 
 const ResetPassword = () => {
     const [password, setPassword] = useState('');
+
+    // Obtener el token desde la query de la URL
+    const [searchParams] = useSearchParams();  
+    const token = searchParams.get("token");  
+ 
 
     const handlePassword = async (e) => {
         e.preventDefault();
@@ -14,15 +20,18 @@ const ResetPassword = () => {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ token, password })
+                body: JSON.stringify({ token, newPassword: password })
             });
 
             const data = await response.json();
 
             if (data.status === "success") {
-                alert("Contraseña creada correctamente");
+                Swal.fire({ icon: "success", title: "Éxito", text: "Contraseña creada correctamente" })
+                .then(() => {
+                    window.location.href = "/login"; // Redirigir a la página de login
+                });
             } else {
-                alert("Hubo un error al actualizar la contraseña");
+                Swal.fire({ icon: "error", title: "Error", text: "Hubo un error al actualizar la contraseña" });
             }
         } catch (error) {
             console.log(error);
@@ -30,28 +39,11 @@ const ResetPassword = () => {
     };
 
     return (
-        <div className={styles.itemContainer}>
-            <Card className={styles.card}>
-                <Card.Body >
-                    <Card.Title>Restablecer Contraseña</Card.Title>
-                    <Card.Text>
-                        Por favor, ingrese su nueva contraseña.
-                    </Card.Text>
-                    <Form onSubmit={handlePassword}>
-                        <Form.Group controlId="password">
-                            <Form.Label>Nueva Contraseña</Form.Label>
-                            <Form.Control
-                                type="password"
-                                placeholder="Ingrese su nueva contraseña"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                        </Form.Group>
-                        <Button type="submit" variant="primary" className={styles.margin}>Enviar</Button>
-                    </Form>
-                </Card.Body>
-            </Card>
-        </div>
+        <ResetPasswordItem
+            handlePassword={handlePassword}
+            password={password}
+            setPassword={setPassword}
+        />
     );
 };
 

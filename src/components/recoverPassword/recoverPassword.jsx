@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Button, Card, Form } from "react-bootstrap";
+import RecoverPasswordItem from "./recoverdPasswordItem";
 import styles from './styles.module.css';
+import Swal from "sweetalert2";
 
 const RecoverPassword = () => {
     const [email, setEmail] = useState('');
@@ -19,9 +20,9 @@ const RecoverPassword = () => {
 
             const data = await response.json();
             if (data.status === "success") {
-                alert("Email enviado");
+                Swal.fire({ icon: "success", title: "Éxito", text: "Email enviado" });
             } else {
-                alert("Error al enviar email: " + data.message);
+                Swal.fire({ icon: "error", title: "Error", text: `Error al enviar email:: ${data.message}` });
             }
 
             setEmail('');
@@ -32,29 +33,12 @@ const RecoverPassword = () => {
 
     return (
         <>
-          <div className={styles.itemContainer}>
-                    <Card className={styles.card}>
-                        <Card.Body >
-                            <Card.Title>Restablecer Contraseña</Card.Title>
-                            <Card.Text>
-                                Por favor, ingrese su correo electronico.
-                            </Card.Text>
-                            <Form onSubmit={handlePassword}>
-                                <Form.Group controlId="email">
-                                    <Form.Label>Ingresa tu correo Electronico</Form.Label>
-                                    <Form.Control
-                                        type="email"
-                                        placeholder="Ingresa tu correo Electronico"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                    />
-                                </Form.Group>
-                                <Button type="submit" variant="primary" className={styles.margin}>Enviar</Button>
-                            </Form>
-                        </Card.Body>
-                    </Card>
-                </div>
-   
+            <h4 className={styles.margin}>Restablecer Password</h4>
+            <RecoverPasswordItem
+                handlePassword={handlePassword}
+                email={email}
+                setEmail={setEmail}
+            />
         </>
     );
 };

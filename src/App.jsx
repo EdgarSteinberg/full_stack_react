@@ -24,6 +24,7 @@ import Contactanos from './components/contactanos/contactanos';
 import RecoverPassword from './components/recoverPassword/recoverPassword';
 import ResetPassword from './components/resetPassword/resetPassword';
 import Users from './components/users/users';
+import Footer from './components/footer/footer';
 
 function App() {
 
@@ -54,11 +55,11 @@ function App() {
           <Route path='/ticket' element={<Ticket />} />
           <Route path='/ticket/:id' element={<TicketDetail />} />
           <Route path='/contactanos' element={<Contactanos />} />
-          <Route path='/recover-password' element={<RecoverPassword/>}/>
-          <Route path='/reset-password' element={<ResetPassword/>}/>
-          <Route path='/users' element={<Users/>}/>
+          <Route path='/recover-password' element={<RecoverPassword />} />
+          <Route path='/reset-password' element={<ResetPassword />} />
+          <Route path='/users' element={<Users />} />
         </Routes>
-
+        <Footer />
       </BrowserRouter>
 
     </CartComponentContext>

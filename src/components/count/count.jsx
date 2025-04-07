@@ -8,12 +8,19 @@ import { Link } from 'react-router-dom';
 const Count = ({ onAdd, product }) => {
     const [count, setCount] = useState(1);
     const { profile } = useContext(CartContext);
+    const [showFullDescription, setShowFullDescription] = useState(false);
+
+    const toggleDescription = () => {
+        setShowFullDescription(prev => !prev);
+    };
+
+    const descriptionPreview = product.description.length > 100
+        ? `${product.description.slice(0, 100)}...`
+        : product.description;
 
     const addCount = () => { setCount(count + 1); }
 
     const subtractCount = () => { count > 1 && setCount(count - 1); }
-
-    const resetCount = () => { setCount(1); }
 
     const addProductToCart = () => { count > 0 && onAdd(count); }
 
@@ -22,7 +29,7 @@ const Count = ({ onAdd, product }) => {
             <div className={styles.cardContainer}>
                 <Card className={styles.cardStyles}>
                     {/* Imagen del producto */}
-                    <div style={{ flex: '1', overflow: 'hidden' }}>
+                    <div className={styles.cardImage}>
                         <Card.Img
                             variant="top"
                             src={`http://localhost:8080/products/${product.category_product}/${product.thumbnails[0]}`}
@@ -34,9 +41,19 @@ const Count = ({ onAdd, product }) => {
                     {/* Detalles del producto */}
                     <div className={styles.card}>
                         <Card.Body>
-                            <Card.Title style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>{product.title}</Card.Title>
+                            <Card.Title className={styles.title}>{product.title}</Card.Title>
                             <Card.Text style={{ color: '#555', marginBottom: '15px' }}>
-                                <strong>Descripción:</strong> {product.description}
+                                <strong>Descripción:</strong>{' '}
+                                {showFullDescription ? product.description : descriptionPreview}
+                                {product.description.length > 100 && (
+                                    <Button
+                                        variant="link"
+                                        onClick={toggleDescription}
+                                        style={{ padding: 0, marginLeft: '5px' }}
+                                    >
+                                        {showFullDescription ? 'Ver menos' : 'Ver más'}
+                                    </Button>
+                                )}
                             </Card.Text>
 
                             {/* Contador de productos */}
@@ -63,7 +80,7 @@ const Count = ({ onAdd, product }) => {
                     </div>
                 </Card>
             </div>
-            
+
         </>
     );
 

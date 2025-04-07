@@ -7,7 +7,7 @@ import NotProfile from "../notProfile/notProfile";
 import ProcesarCompra from "../procesarCompra/procesarCompra";
 import { Link } from "react-router-dom";
 import Spinner from 'react-bootstrap/Spinner';
-
+import { Ticket as TicketIcon } from "react-bootstrap-icons";
 
 const Ticket = () => {
     const [ticket, setTicket] = useState(null); // Inicializamos en null en lugar de []
@@ -64,9 +64,11 @@ const Ticket = () => {
 
     return (
         <>
-            <p className={style.title}>Ticket</p>
+            <h4 className={style.title} >
+            ✅ Ticket
+            </h4>
 
-            {loading &&  <Spinner animation="border" variant="warning" >
+            {loading && <Spinner animation="border" variant="warning" className={style.container}>
                 <span className="visually-hidden">Cargando...</span>
             </Spinner>}
             {error && <p className={style.error}>Error: {error}</p>}

@@ -14,8 +14,7 @@ input{
 
 .searchInput {
     width: 30rem;
-    padding: 10px;
-    
+    padding: 10px; 
     border-radius: 50px;
     border: 1px solid #ccc;
     outline: none;
@@ -26,4 +25,28 @@ input{
     right: 14px;
     cursor: pointer;
     color: gray;
+}
+
+@media screen and (max-width: 540px) {
+    .searchInput {
+        width: 25rem;
+        padding: 10px; 
+        border-radius: 50px;
+        border: 1px solid #ccc;
+        outline: none;
+        margin-top: 7px;
+    }
+    
+}
+
+@media screen and (max-width: 450px) {
+    .searchInput {
+        width: 18rem;
+        padding: 10px; 
+        border-radius: 50px;
+        border: 1px solid #ccc;
+        outline: none;
+        margin-top: 7px;
+    }
+    
 }

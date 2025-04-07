@@ -5,10 +5,11 @@ import { Button, Card, Form } from "react-bootstrap";
 
 
 
-const UploadDocItem = ({ profile,message,loading, handleSubmit }) => {
+const UploadDocItem = ({ profile,message, handleSubmit }) => {
 
     return (
-        <>
+        <>  
+        <h4 className={styles.title}>Cuenta Premium</h4>
             {profile.role === "admin" || profile.role === "premium" ? (
                 <div>
                     <div className={styles.container}>

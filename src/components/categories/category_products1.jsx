@@ -13,7 +13,7 @@ const Category_products1 = ({ product, title, purchases }) => {
                 <Card.Img variant="top"
                     src={`http://localhost:8080/products/${product.category_product}/${product.thumbnails[0]}`}
                     alt={product.title}
-                    style={{width: '150px'}} />
+                    className={styles.imagex} />
                 <Card.Body>
                     <Card.Title>{product.title}</Card.Title>
 
@@ -24,7 +24,8 @@ const Category_products1 = ({ product, title, purchases }) => {
 
                     {/* Estrellas según cantidad de compras */}
                     <div className={styles.stars}>
-                        {"★".repeat(Math.min(purchases, 5)).padEnd(5, "☆")} ({purchases})
+                        {/* {"★".repeat(Math.min(product.purchases, 5)).padEnd(5, "☆")} ({product.purchases}) */}
+                        {"★".repeat(Math.min(product.purchases || 0, 5)).padEnd(5, "☆")} ({product.purchases || 0})
                     </div>
 
                     <Card.Text style={{ color: 'green' }}>

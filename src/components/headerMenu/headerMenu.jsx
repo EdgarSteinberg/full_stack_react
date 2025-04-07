@@ -44,9 +44,6 @@ const HeaderMenu = () => {
         }
     }, [totalQuantity, setCart]); // Solo se ejecuta si cambia el totalQuantity
 
-
-
-
     return (
         <HeaderItem profile={profile} handleLinkClick={handleLinkClick} totalQuantity={totalQuantity}/>
     );

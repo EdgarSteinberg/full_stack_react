@@ -5,15 +5,17 @@ import styles from './styles.module.css';
 import { Button } from "react-bootstrap";
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-import { CartX } from "react-bootstrap-icons";
 import CartVacio from "./cartVacio";
-
+import { Cart as CartIcon } from "react-bootstrap-icons";
 
 const Cart = () => {
     const { cart, clearCart, deleteProduct, total } = useContext(CartContext);  // Ya obtenemos el total desde el contexto
 
     return (
         <>
+            <h4 >
+                <CartIcon size={30} /> Tu carrito de compras
+            </h4>
             {cart.length > 0 ? (
                 <>
                     <div className={styles.itemContainer}>
@@ -26,6 +28,7 @@ const Cart = () => {
                                         <ListGroup variant="flush">
                                             <ListGroup.Item><strong>Descripción:</strong> {pr.description}</ListGroup.Item>
                                             <ListGroup.Item><strong>Precio:</strong> ${pr.price}</ListGroup.Item>
+                                            <ListGroup.Item><strong>Cantidad:</strong> {pr.quantity}</ListGroup.Item>
                                             <ListGroup.Item style={{ color: 'green' }}><strong>Total:</strong> ${pr.total}</ListGroup.Item>
                                         </ListGroup>
                                         <Button onClick={() => deleteProduct(pr._id)} variant="danger">Eliminar</Button>
@@ -34,21 +37,23 @@ const Cart = () => {
                             </div>
                         ))}
                     </div>
-
                     <br></br>
                     <div className={styles.btn}>
                         <strong className={styles.total}> Total Compra: ${total}</strong>
-                        <Button onClick={clearCart} variant="danger">Vaciar Carrito</Button>
                     </div>
-                    <br></br>
                     <div >
                         <Link to={'/ticket'} >
                             <Button variant="success" className={styles.btn}>Procesar Compra</Button>
                         </Link>
                     </div>
+                    <br></br>
+                    <div className={styles.btn}>
+                        <Button onClick={clearCart} variant="danger">Vaciar Carrito</Button>
+                    </div>
+
                 </>
             ) : (
-               <CartVacio/>
+                <CartVacio />
             )}
         </>
     );

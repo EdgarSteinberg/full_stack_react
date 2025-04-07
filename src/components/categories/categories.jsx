@@ -24,9 +24,10 @@ const Categories = () => {
             .then(json => {
                 if (category) {
                     setProducts(json.payload); // Si estamos obteniendo productos, los almacenamos en el estado de productos
-                    setTitle(category)
+                    setTitle(category);
                 } else {
                     setCategories(json.payload); // Si estamos obteniendo categorías, las almacenamos en el estado de categorías
+                   
                 }
             })
             .catch(error => setError(error.message))
@@ -42,7 +43,7 @@ const Categories = () => {
                     category ? (
                         // Si estamos en la vista de productos, mostramos los productos de esa categoría
                         <>
-                            <h1>{title ? title.toUpperCase() : <Spinner animation="border" variant="danger" />}</h1>
+                            <h4>{title ? title.toUpperCase() : <Spinner animation="border" variant="danger" />}</h4>
                             <CategoryProduct products={products} title={title} />
                         </>
                     ) : (

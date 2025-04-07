@@ -4,12 +4,13 @@ import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import { Github } from 'react-bootstrap-icons';
- 
+import styles from './styles.module.css'; 
+
 const LoginItem = ({handleSubmit,handleChange, form ,handleLoginWithGitHub, errorMessage}) => {
 
     return (
         <>
-        <Form onSubmit={handleSubmit} className="p-4 border rounded shadow-sm w-50 mx-auto"> {/* Agrega estilos opcionales */}
+        <Form onSubmit={handleSubmit} className={styles.cardContainer}> {/* Agrega estilos opcionales */}
                 {/* Campo Email */}
                 <h4 className="text-center mb-4">Iniciar sesión</h4>
                 {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}

@@ -1,13 +1,12 @@
-import { Col, Form, Row, Button,Card } from 'react-bootstrap';
+import { Col, Form, Row, Button } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import { Github } from 'react-bootstrap-icons';
+import styles from './styles.module.css';
 
-const RegisterItem = ({form,handleSubmit ,handleOnChange,errorMessage, handleLoginWithGitHub}) => {
-    
-
+const RegisterItem = ({form,handleSubmit ,handleOnChange,errorMessage, handleLoginWithGitHub}) => {    
     return (
         <>
-         <Form onSubmit={handleSubmit} className="p-4 border rounded shadow-sm w-50 mx-auto">
+         <Form onSubmit={handleSubmit} className={styles.cardContainer}>
                 <h4 className="text-center mb-4">Crea una cuenta</h4>
 
                 {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}

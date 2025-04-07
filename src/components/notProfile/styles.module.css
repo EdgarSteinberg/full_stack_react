@@ -1,4 +1,4 @@
-.cardContainer{
+.cardContainer {
     width: 50%;
     margin: auto;
     margin-top: 50px;
@@ -6,7 +6,15 @@
     text-align: center;
 }
 
-.cardTitle{
+.cardTitle {
     font-size: 24px;
     font-weight: bold;
+}
+
+@media screen and (max-width: 700px) {
+    .cardContainer {
+        width: 100%;
+        padding: 10px;
+       
+    }
 }

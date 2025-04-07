@@ -56,3 +56,11 @@ a{
 Link{
    color: black;
 }
+
+
+@media screen and (max-width: 700px) {
+    .header {
+        display: flex;
+        flex-direction: column;
+    }
+}

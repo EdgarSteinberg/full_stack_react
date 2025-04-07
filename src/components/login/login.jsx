@@ -39,7 +39,6 @@ const Login = () => {
 
 
             const data = await response.json();
-            console.log("Datos recibidos:", data);
     
             if (data.status === "success") {
                 login(data.payload); // Guardar sesión en el contexto
@@ -47,7 +46,6 @@ const Login = () => {
             } else {
                 setErrorMessage(data.error || "Error desconocido");
             }
-
 
             if (data.status === "success") {
                 window.location.href = "http://localhost:5173/";
