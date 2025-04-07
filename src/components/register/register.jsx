@@ -35,7 +35,7 @@ const Register = () => {
             }
 
             if (data.status === 'success') {
-                window.location.href = '/login';
+                window.location.href = 'https://mobilematrix.netlify.app/login';
             } else {
                 setErrorMessage(data.message || 'Error al registrar usuario.');
             }
