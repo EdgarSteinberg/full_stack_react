@@ -12,7 +12,7 @@ const handleLogout = async () => {
 
         if (response.ok) {
             await response.json();
-            window.location.href = 'https://mobilematrix.netlify.app/login'
+            window.location.href = '/login'
         } else {
             console.error("Error al cerrar sesión");
         }

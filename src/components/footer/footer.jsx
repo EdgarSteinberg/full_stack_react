@@ -17,7 +17,7 @@ const Footer = () => {
                     <a href="https://github.com/EdgarSteinberg/" target="_blank" rel="noopener noreferrer">
                         <Github size={30} style={{ color: 'black' }} />
                     </a>
-                    <a href="https://mobilematrix.netlify.app/contactanos">
+                    <a href="/contactanos">
                         <Envelope size={30} style={{ color: 'black' }} />
                     </a>
                     <a href="https://edgar-steinberg-portfolio.netlify.app/" target="_blank" rel="noopener noreferrer">
