@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import RegisterItem from './registerItem';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
+    const navigate = useNavigate();
     const handleLoginWithGitHub = () => {
         window.location.href = "https://full-stack-smf0.onrender.com/api/github";
     };
@@ -35,7 +37,7 @@ const Register = () => {
             }
 
             if (data.status === 'success') {
-                window.location.href = '/login';
+                navigate('/login'); 
             } else {
                 setErrorMessage(data.message || 'Error al registrar usuario.');
             }

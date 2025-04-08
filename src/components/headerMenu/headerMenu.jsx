@@ -2,8 +2,13 @@ import { useContext } from "react";
 import { CartContext } from "../../context/cartContext";
 import { useEffect } from "react";
 import HeaderItem from "./headerItem";
+import { useNavigate } from 'react-router-dom';
+
 
 const handleLogout = async () => {
+
+    const navigate = useNavigate();
+    
     try {
         const response = await fetch("https://full-stack-smf0.onrender.com/api/users/logout", {
             method: "POST",
@@ -12,7 +17,7 @@ const handleLogout = async () => {
 
         if (response.ok) {
             await response.json();
-            window.location.href = '/login'
+            navigate('/login'); // Esta sí funciona sin recargar y sin Netlify enloqueciendo
         } else {
             console.error("Error al cerrar sesión");
         }

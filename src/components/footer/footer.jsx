@@ -1,6 +1,7 @@
 import { Linkedin, Github, Envelope, Globe } from 'react-bootstrap-icons';
 import Card from 'react-bootstrap/Card';
 import styles from './styles.module.css';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -17,9 +18,9 @@ const Footer = () => {
                     <a href="https://github.com/EdgarSteinberg/" target="_blank" rel="noopener noreferrer">
                         <Github size={30} style={{ color: 'black' }} />
                     </a>
-                    <a href="/contactanos">
+                    <Link to="/contactanos">
                         <Envelope size={30} style={{ color: 'black' }} />
-                    </a>
+                    </Link>
                     <a href="https://edgar-steinberg-portfolio.netlify.app/" target="_blank" rel="noopener noreferrer">
                         <Globe size={30} style={{ marginRight: "10px", color: "black" }} />
                     </a>
