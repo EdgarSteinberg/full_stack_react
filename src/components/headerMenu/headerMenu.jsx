@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { CartContext } from "../../context/cartContext";
 import { useEffect } from "react";
 import HeaderItem from "./headerItem";
-
+import { useNavigate } from "react-router-dom";
 
 const HeaderMenu = () => {
     const navigate = useNavigate();
