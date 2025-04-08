@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import TicketItem from "./ticketItem";
 import Spinner from 'react-bootstrap/Spinner';
-
+import styles from './styles.module.css';
 
 const TicketDetail = () => {
     const { id } = useParams(); // Obtener el ID del ticket desde la URL
