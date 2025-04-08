@@ -76,7 +76,7 @@ const ProductCreate = () => {
 
             console.log("Producto creado:", data);
 
-            if (data?.payload?.product) {
+            if (data?.payload) {
                 // Actualizar la lista de productos con el nuevo producto usando setProducts
                 setProducts((prevProducts) => [...prevProducts, data.payload.product]);
 
