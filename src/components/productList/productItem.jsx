@@ -4,8 +4,7 @@ import styles from './styles.module.css';
 import { useState } from 'react';
 
 const ProductItem = ({ pr, handleDelete }) => {
-    const [verMas, setVerMas] = (false);
-
+    const [verMas, setVerMas] = useState(false);
 
 
     return (

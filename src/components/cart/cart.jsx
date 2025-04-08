@@ -10,8 +10,8 @@ import { Cart as CartIcon } from "react-bootstrap-icons";
 
 const Cart = () => {
     const { cart, clearCart, deleteProduct, total } = useContext(CartContext);  // Ya obtenemos el total desde el contexto
-
-
+    const [verMas, setVerMas] = useState(false);
+                    
     return (
         <>
             <h4 >
@@ -20,10 +20,7 @@ const Cart = () => {
             {cart.length > 0 ? (
                 <>
                     <div className={styles.itemContainer}>
-                        {cart.map((pr) => {
-                            
-                            const [verMas, setVerMas] = useState(false);
-
+                        {cart.map((pr) => (
                             <div key={pr._id} className={styles.container}>
                                 <Card className={styles.card}>
                                     <Card.Img className={styles.img} variant="top" src={`https://full-stack-smf0.onrender.com/products/${pr.category_product}/${pr.thumbnails[0]}`} alt={pr.title} />
@@ -48,7 +45,7 @@ const Cart = () => {
                                     </Card.Body>
                                 </Card>
                             </div>
-                        })}
+                        ))}
                     </div>
 
                     <br></br>

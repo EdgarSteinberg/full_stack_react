@@ -48,7 +48,7 @@ const Bienvenida = () => {
 
     return (
         <>
-            <Carousel styles={styles.carrusel}>
+            <Carousel className={styles.carrusel}>
                 <Carousel.Item style={{ height: "29vh" }}>
                     <img
                         className="d-block w-100"
