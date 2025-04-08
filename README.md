@@ -3,6 +3,13 @@
 Aplicación fullstack desarrollada con **Node.js**, **Express**, **MongoDB**, y un frontend en **React** con **Bootstrap**. Este proyecto tiene como objetivo consolidar conocimientos clave en desarrollo backend y frontend, incluyendo autenticación, autorización, pruebas, carga de archivos, y más.
 
 ---
+🌐 Demo del Proyecto
+🔗 Frontend: https://mobilematrix.netlify.app/
+
+🔗 API Backend: https://full-stack-smf0.onrender.com/api
+
+
+
 
 ## 🚀 Tecnologías principales
 

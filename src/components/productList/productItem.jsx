@@ -25,12 +25,13 @@ const ProductItem = ({ pr, handleDelete }) => {
                         <strong>Descripción:</strong>{" "}
                         {verMas ? pr.description : `${pr.description.slice(0, 100)}...`}
                         <br />
-                        <button
+                        <Button
+                            variant='link'
                             onClick={() => setVerMas(!verMas)}
                             className={styles.verBtn} // si querés estilo
                         >
                             {verMas ? "Ver menos" : "Ver más"}
-                        </button>
+                        </Button>
                     </Card.Text>
                     <Card.Text style={{ color: 'green' }}> ${pr.price}</Card.Text>
                     <Button variant="danger" onClick={() => handleDelete(pr._id)}>Eliminar</Button>

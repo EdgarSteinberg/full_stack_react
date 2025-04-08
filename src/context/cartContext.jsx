@@ -48,7 +48,6 @@ export const CartComponentContext = ({ children }) => {
     };
 
     const login = (user) => {
-        console.log("Datos recibidos en login:", user);  // Verifica si los datos llegan a la función
         setProfile(user);  // Actualiza el perfil
     };
     

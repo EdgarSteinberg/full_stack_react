@@ -11,7 +11,7 @@ import { Cart as CartIcon } from "react-bootstrap-icons";
 const Cart = () => {
     const { cart, clearCart, deleteProduct, total } = useContext(CartContext);  // Ya obtenemos el total desde el contexto
     const [verMas, setVerMas] = useState(false);
-                    
+
     return (
         <>
             <h4 >
@@ -32,9 +32,12 @@ const Cart = () => {
                                                 <strong>Descripción:</strong>{" "}
                                                 {verMas ? pr.description : `${pr.description.slice(0, 100)}...`}
                                                 <br />
-                                                <button onClick={() => setVerMas(!verMas)} className={styles.verBtn}>
+                                                <Button
+                                                    variant="link"
+                                                    onClick={() => setVerMas(!verMas)}
+                                                    className={styles.verBtn}>
                                                     {verMas ? "Ver menos" : "Ver más"}
-                                                </button>
+                                                </Button>
 
                                             </ListGroup.Item>
                                             <ListGroup.Item><strong>Precio:</strong> ${pr.price}</ListGroup.Item>
