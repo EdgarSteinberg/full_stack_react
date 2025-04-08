@@ -26,6 +26,9 @@ const Bienvenida = () => {
                     throw new Error("Error al cargar los datos");
                 }
 
+                // Simulación de retardo para ver el skeleton
+                await new Promise(resolve => setTimeout(resolve, 1500));
+
                 const catData = await catRes.json();
                 const filtData = await filtRes.json();
 
