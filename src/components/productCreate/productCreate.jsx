@@ -78,7 +78,7 @@ const ProductCreate = () => {
 
             if (data?.payload) {
                 // Actualizar la lista de productos con el nuevo producto usando setProducts
-                setProducts((prevProducts) => [...prevProducts, data.payload.product]);
+                setProducts((prevProducts) => [...prevProducts, data.payload]);
 
                 // Limpiar el formulario
                 setForm({
