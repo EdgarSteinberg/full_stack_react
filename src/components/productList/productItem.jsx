@@ -1,9 +1,13 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import styles from './styles.module.css';
-
+import { useState } from 'react';
 
 const ProductItem = ({ pr, handleDelete }) => {
+    const [verMas, setVerMas] = (false);
+
+
+
     return (
         <div className={styles.container}>
 
@@ -18,8 +22,18 @@ const ProductItem = ({ pr, handleDelete }) => {
                 )}
                 <Card.Body className={styles.card} >
                     <Card.Title>{pr.title}</Card.Title>
-                    <Card.Text>{pr.description}</Card.Text>
-                    <Card.Text style={{color: 'green'}}> ${pr.price}</Card.Text>
+                    <Card.Text>
+                        <strong>Descripción:</strong>{" "}
+                        {verMas ? pr.description : `${pr.description.slice(0, 100)}...`}
+                        <br />
+                        <button
+                            onClick={() => setVerMas(!verMas)}
+                            className={styles.verBtn} // si querés estilo
+                        >
+                            {verMas ? "Ver menos" : "Ver más"}
+                        </button>
+                    </Card.Text>
+                    <Card.Text style={{ color: 'green' }}> ${pr.price}</Card.Text>
                     <Button variant="danger" onClick={() => handleDelete(pr._id)}>Eliminar</Button>
                 </Card.Body>
             </Card>

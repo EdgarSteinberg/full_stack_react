@@ -3,6 +3,11 @@
 
 }
 
+.carrusel {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .sidebar {
   width: 10%;
   /* Ocupa el 25% del ancho de la pantalla */
@@ -10,7 +15,7 @@
   /* Evita que se haga demasiado pequeño en pantallas pequeñas */
   margin-left: 10%;
   margin-top: 5px;
-   
+
 }
 
 .content {
@@ -45,12 +50,13 @@
     justify-content: center;
     align-items: center;
   }
+
   .sidebar {
     width: 10%;
     /* Ocupa el 25% del ancho de la pantalla */
     min-width: 200px;
-  
-     
+
+
   }
 }
 
@@ -58,8 +64,15 @@
   .sidebar {
     width: 100%;
     min-width: unset;
-    margin: 0; /* ¡Borramos cualquier margen sospechoso! */
-    padding: 0; /* Por si las dudas también */
+    margin: 0;
+    /* ¡Borramos cualquier margen sospechoso! */
+    padding: 0;
+    /* Por si las dudas también */
   }
-  
+
+  .carrusel {
+    width: 100%;
+    margin: 0 auto;
+  }
+
 }

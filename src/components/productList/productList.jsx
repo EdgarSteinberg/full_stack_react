@@ -54,7 +54,7 @@ const ProductList = () => {
             .catch(error => {
                 console.error("Error al eliminar el producto:", error);
                 Swal.fire({ icon: "error", title: "Error", text: `${error.message}` });
-                 
+
             });
     };
 
@@ -69,7 +69,10 @@ const ProductList = () => {
             ) : error ? (
                 <p>Error: {error}</p>
             ) : (
-                <ProductListItem products={products} handleDelete={handleDelete} />
+                <ProductListItem
+                    products={products}
+                    handleDelete={handleDelete}
+                />
 
             )}
 

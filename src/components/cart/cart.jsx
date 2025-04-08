@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../context/cartContext";
 import { Link } from "react-router-dom";
 import styles from './styles.module.css';
@@ -11,6 +11,7 @@ import { Cart as CartIcon } from "react-bootstrap-icons";
 const Cart = () => {
     const { cart, clearCart, deleteProduct, total } = useContext(CartContext);  // Ya obtenemos el total desde el contexto
 
+
     return (
         <>
             <h4 >
@@ -19,14 +20,26 @@ const Cart = () => {
             {cart.length > 0 ? (
                 <>
                     <div className={styles.itemContainer}>
-                        {cart.map((pr) => (
+                        {cart.map((pr) => {
+                            
+                            const [verMas, setVerMas] = useState(false);
+
                             <div key={pr._id} className={styles.container}>
                                 <Card className={styles.card}>
                                     <Card.Img className={styles.img} variant="top" src={`https://full-stack-smf0.onrender.com/products/${pr.category_product}/${pr.thumbnails[0]}`} alt={pr.title} />
                                     <Card.Body>
                                         <Card.Title>{pr.title}</Card.Title>
                                         <ListGroup variant="flush">
-                                            <ListGroup.Item><strong>Descripción:</strong> {pr.description}</ListGroup.Item>
+                                            <ListGroup.Item>
+
+                                                <strong>Descripción:</strong>{" "}
+                                                {verMas ? pr.description : `${pr.description.slice(0, 100)}...`}
+                                                <br />
+                                                <button onClick={() => setVerMas(!verMas)} className={styles.verBtn}>
+                                                    {verMas ? "Ver menos" : "Ver más"}
+                                                </button>
+
+                                            </ListGroup.Item>
                                             <ListGroup.Item><strong>Precio:</strong> ${pr.price}</ListGroup.Item>
                                             <ListGroup.Item><strong>Cantidad:</strong> {pr.quantity}</ListGroup.Item>
                                             <ListGroup.Item style={{ color: 'green' }}><strong>Total:</strong> ${pr.total}</ListGroup.Item>
@@ -35,8 +48,9 @@ const Cart = () => {
                                     </Card.Body>
                                 </Card>
                             </div>
-                        ))}
+                        })}
                     </div>
+
                     <br></br>
                     <div className={styles.btn}>
                         <strong className={styles.total}> Total Compra: ${total}</strong>

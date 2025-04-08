@@ -48,7 +48,7 @@ const Bienvenida = () => {
 
     return (
         <>
-            <Carousel style={{ width: "80%", margin: "0 auto" }}>
+            <Carousel styles={styles.carrusel}>
                 <Carousel.Item style={{ height: "29vh" }}>
                     <img
                         className="d-block w-100"
