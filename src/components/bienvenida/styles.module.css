@@ -49,7 +49,17 @@
     width: 10%;
     /* Ocupa el 25% del ancho de la pantalla */
     min-width: 200px;
-
+  
      
   }
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar {
+    width: 100%;
+    min-width: unset;
+    margin: 0; /* ¡Borramos cualquier margen sospechoso! */
+    padding: 0; /* Por si las dudas también */
+  }
+  
 }

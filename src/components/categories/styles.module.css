@@ -19,7 +19,7 @@ h4{
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-
+    gap: 1rem; /* Este es mágico para espacio uniforme sin usar margin */
 }
 
 .card {
@@ -44,14 +44,13 @@ h4{
 
 }
 
-.cardCategorie {
+/* .cardCategorie {
     width: 18rem;
     text-align: center;
     align-items: center;
-    margin: 7px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  
     border-radius: 10px;
-}
+} */
 
 
 .imagex {

@@ -6,9 +6,6 @@ import { useNavigate } from 'react-router-dom';
 
 
 const handleLogout = async () => {
-
-    const navigate = useNavigate();
-    
     try {
         const response = await fetch("https://full-stack-smf0.onrender.com/api/users/logout", {
             method: "POST",
@@ -32,6 +29,8 @@ const handleLinkClick = (e) => {
 };
 
 const HeaderMenu = () => {
+    const navigate = useNavigate();
+    
     const { profile, cart ,setCart} = useContext(CartContext);
     
     // Calcular la cantidad total de productos en el carrito

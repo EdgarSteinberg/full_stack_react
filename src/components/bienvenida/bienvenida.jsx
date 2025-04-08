@@ -9,26 +9,48 @@ import { useState, useEffect } from "react";
 import SkeletonCard from "../skeleton_card/skeleton_card";
 
 const Bienvenida = () => {
-
-    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [categories, setCategories] = useState([]);
+    const [filters, setFilters] = useState([]);
 
     useEffect(() => {
-        setTimeout(() => {
-            setLoading(false);
-        }, 1000)
+        const fetchData = async () => {
+            try {
+                const [catRes, filtRes] = await Promise.all([
+                    fetch("https://full-stack-smf0.onrender.com/api/categories"),
+                    fetch("https://full-stack-smf0.onrender.com/api/products")
+                ]);
+
+                if (!catRes.ok || !filtRes.ok) {
+                    throw new Error("Error al cargar los datos");
+                }
+
+                const catData = await catRes.json();
+                const filtData = await filtRes.json();
+
+                setCategories(catData.payload); // Ajustar según estructura real de tu JSON
+                setFilters(filtData.payload);
+            } catch (error) {
+                setError(error.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
     }, []);
 
+    if (error) return <p>Error: {error}</p>;
 
     return (
         <>
-
             <Carousel style={{ width: "80%", margin: "0 auto" }}>
-                {/* Samsung */}
                 <Carousel.Item style={{ height: "29vh" }}>
                     <img
                         className="d-block w-100"
                         src={samsung}
-                        alt="Samsung - Innovación en cada detalle"
+                        alt="Samsung"
                         style={{ height: "100%", objectFit: "cover" }}
                     />
                     <Carousel.Caption>
@@ -36,13 +58,11 @@ const Bienvenida = () => {
                         <p>Innovación, potencia y diseño en cada dispositivo.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
-
-                {/* Apple */}
                 <Carousel.Item style={{ height: "29vh" }}>
                     <img
                         className="d-block w-100"
                         src={apple}
-                        alt="Apple - Tecnología y elegancia"
+                        alt="Apple"
                         style={{ height: "100%", objectFit: "cover" }}
                     />
                     <Carousel.Caption>
@@ -50,13 +70,11 @@ const Bienvenida = () => {
                         <p>El equilibrio perfecto entre rendimiento y elegancia.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
-
-                {/* Sony */}
                 <Carousel.Item style={{ height: "29vh" }}>
                     <img
                         className="d-block w-100"
                         src={sony}
-                        alt="Sony - Calidad e innovación"
+                        alt="Sony"
                         style={{ height: "100%", objectFit: "cover" }}
                     />
                     <Carousel.Caption>
@@ -66,9 +84,6 @@ const Bienvenida = () => {
                 </Carousel.Item>
             </Carousel>
 
-
-
-
             {loading ? (
                 <div className={styles.item}>
                     <SkeletonCard />
@@ -76,16 +91,13 @@ const Bienvenida = () => {
             ) : (
                 <div className={styles.container}>
                     <div className={styles.sidebar}>
-                        <Filtros />
+                        <Filtros filters={filters} />
                     </div>
                     <div className={styles.content}>
-                        {/*Componente categories*/}
-                        <Categories />
+                        <Categories categories={categories} />
                     </div>
                 </div>
             )}
-
-
         </>
     );
 };
