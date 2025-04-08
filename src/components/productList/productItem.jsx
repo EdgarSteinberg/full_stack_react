@@ -28,7 +28,7 @@ const ProductItem = ({ pr, handleDelete }) => {
                         <Button
                             variant='link'
                             onClick={() => setVerMas(!verMas)}
-                            className={styles.verBtn} // si querés estilo
+                            style={{ color: "#0d6efd", textDecoration: "underline" }}
                         >
                             {verMas ? "Ver menos" : "Ver más"}
                         </Button>

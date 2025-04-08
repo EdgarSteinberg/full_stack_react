@@ -44,8 +44,14 @@ const HeaderItem = ({ profile, handleLinkClick, totalQuantity }) => {
                         </li>
                     ) : (
                         <li className={styles.menuItem}>
-                            <Link to={"/logout"} onClick={handleLinkClick}>Cerrar sesión</Link>
-                        </li>
+                        <span
+                            className={styles.logoutLink}
+                            onClick={handleLinkClick}
+                            style={{ cursor: 'pointer', color: 'blue' }}
+                        >
+                            Cerrar sesión
+                        </span>
+                    </li>
                     )}
 
 

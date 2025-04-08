@@ -2,29 +2,12 @@ import { useContext } from "react";
 import { CartContext } from "../../context/cartContext";
 import { useEffect } from "react";
 import HeaderItem from "./headerItem";
-import { useNavigate } from 'react-router-dom';
-
 
 
 const HeaderMenu = () => {
     const navigate = useNavigate();
 
     const { profile, cart, setCart } = useContext(CartContext);
-
-    // Calcular la cantidad total de productos en el carrito
-    const totalQuantity = cart.reduce((acc, product) => acc + product.quantity, 0);
-
-    // Si el carrito está vacío, actualizar localStorage y el contexto
-    useEffect(() => {
-        if (totalQuantity === 0) {
-            // Vaciar el carrito en localStorage
-            localStorage.setItem("cart", JSON.stringify([]));
-            localStorage.setItem("total", JSON.stringify(0));
-
-            // Vaciar el carrito en el estado de React
-            setCart([]);
-        }
-    }, [totalQuantity, setCart]); // Solo se ejecuta si cambia el totalQuantity
 
     const handleLogout = async () => {
         try {
@@ -48,6 +31,23 @@ const HeaderMenu = () => {
         e.preventDefault();
         handleLogout();
     };
+
+
+
+    // Calcular la cantidad total de productos en el carrito
+    const totalQuantity = cart.reduce((acc, product) => acc + product.quantity, 0);
+
+    // Si el carrito está vacío, actualizar localStorage y el contexto
+    useEffect(() => {
+        if (totalQuantity === 0) {
+            // Vaciar el carrito en localStorage
+            localStorage.setItem("cart", JSON.stringify([]));
+            localStorage.setItem("total", JSON.stringify(0));
+
+            // Vaciar el carrito en el estado de React
+            setCart([]);
+        }
+    }, [totalQuantity, setCart]); // Solo se ejecuta si cambia el totalQuantity
 
 
     return (

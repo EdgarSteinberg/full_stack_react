@@ -35,7 +35,8 @@ const Cart = () => {
                                                 <Button
                                                     variant="link"
                                                     onClick={() => setVerMas(!verMas)}
-                                                    className={styles.verBtn}>
+                                                    style={{ color: "#0d6efd", textDecoration: "underline" }}
+                                                     >
                                                     {verMas ? "Ver menos" : "Ver más"}
                                                 </Button>
 
