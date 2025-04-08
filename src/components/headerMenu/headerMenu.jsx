@@ -2,10 +2,8 @@ import { useContext } from "react";
 import { CartContext } from "../../context/cartContext";
 import { useEffect } from "react";
 import HeaderItem from "./headerItem";
-import { useNavigate } from "react-router-dom";
 
 const HeaderMenu = () => {
-    const navigate = useNavigate();
 
     const { profile, cart, setCart } = useContext(CartContext);
 
@@ -18,7 +16,7 @@ const HeaderMenu = () => {
 
             if (response.ok) {
                 await response.json();
-                navigate('/login'); // Esta sí funciona sin recargar y sin Netlify enloqueciendo
+                window.location.href = 'https://mobilematrix.netlify.app/login'
             } else {
                 console.error("Error al cerrar sesión");
             }

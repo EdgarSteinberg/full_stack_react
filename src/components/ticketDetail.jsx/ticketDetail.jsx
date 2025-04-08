@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import TicketItem from "./ticketItem";
+import Spinner from 'react-bootstrap/Spinner';
 
 
 const TicketDetail = () => {
@@ -19,11 +20,18 @@ const TicketDetail = () => {
             .finally(() => setLoading(false));
     }, [id]); // Dependencia correcta
 
-    if (loading) return <p>...cargando</p>;
+    if (loading) return (
+        <div className={style.containerSpiner}>
+          <Spinner animation="border" variant="warning" />
+          <span className="visually-hidden">Cargando...</span>
+        </div>
+      );
+      
+
     if (!ticket) return <p>No se encontró el ticket.</p>;
 
     return (
-       <TicketItem ticket={ticket}/>
+        <TicketItem ticket={ticket} />
     );
 };
 
