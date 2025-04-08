@@ -65,7 +65,10 @@ const Count = ({ onAdd, product }) => {
 
                             {/* Botón de agregar al carrito */}
                             {profile ? (
-                                <Button variant="success" onClick={addProductToCart} style={{ width: '100%' }}>
+                                <Button
+                                    variant="success"
+                                    onClick={addProductToCart}
+                                    style={{ width: '100%' }}>
                                     Agregar al carrito
                                 </Button>
                             ) : (

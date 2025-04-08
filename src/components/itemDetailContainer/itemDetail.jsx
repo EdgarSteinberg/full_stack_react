@@ -20,7 +20,10 @@ const ItemDetail = ({ product }) => {
         const updatedProduct = { ...product, quantity, total }; 
         addProductContext(updatedProduct);
         setAddProduct(true);
-        Swal.fire("Producto agregado al carrito");
+        Swal.fire({
+            icon : 'success',
+            title : "Producto agregado al carrito"
+        });
     
         try {
             // Aquí haces la petición POST al backend

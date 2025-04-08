@@ -21,7 +21,7 @@ const TicketDetail = () => {
     }, [id]); // Dependencia correcta
 
     if (loading) return (
-        <div className={style.containerSpiner}>
+        <div className={styles.containerSpiner}>
           <Spinner animation="border" variant="warning" />
           <span className="visually-hidden">Cargando...</span>
         </div>
