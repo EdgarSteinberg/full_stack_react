@@ -45,7 +45,7 @@ const TicketItem = ({ ticket }) => {
                                     </Button>
                                     <br />
                                     <strong>Precio:</strong> ${item.product.price} <br />
-                                    <strong>Cantidad:</strong> {item.product.quantity}
+                                    <strong>Cantidad:</strong> ${item.product.quantity}
                                 </li>
                             ))}
                         </ul>
