@@ -40,7 +40,7 @@ const ItemDetail = ({ product }) => {
     
             const data = await response.json();
     
-            if (data.status === 'Succes') {
+            if (data.status === 'success') {
                 setTimeout(() => {
                     navigate("/cart");
                 }, 1000);
