@@ -18,7 +18,7 @@ const Bienvenida = () => {
         const fetchData = async () => {
             try {
                 const [catRes, filtRes] = await Promise.all([
-                    fetch("https://full-stack-smf0.onrender.com/api/categories"),
+                    fetch("https://full-stack-smf0.onrender.com/api/categories"),//categories
                     fetch("https://full-stack-smf0.onrender.com/api/products")
                 ]);
 
