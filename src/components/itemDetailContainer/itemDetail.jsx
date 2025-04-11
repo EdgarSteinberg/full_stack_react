@@ -34,7 +34,8 @@ const ItemDetail = ({ product }) => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                }
+                },
+                body: JSON.stringify({ quantity })  // <- ¡ACÁ MANDÁS EL DATO!
             });
     
             const data = await response.json();
