@@ -48,7 +48,7 @@ const ItemDetail = ({ product }) => {
                 console.error('Error al agregar el producto al carrito');
             }
         } catch (error) {
-            console.error('Error al comunicarte con el backend:', error);
+            console.error('Error al comunicarte con el backend:', error);// error
         }
     };
     
