@@ -4,7 +4,7 @@ import ProcesarCompraForm from './procesarCompraForm';
 import Swal from "sweetalert2";
 
 
-const ProcesarCompra = ({ handleTickets }) => {
+const ProcesarCompra = ({ handleTickets, loading }) => {
     const { cart } = useContext(CartContext);
 
 
@@ -72,13 +72,17 @@ const ProcesarCompra = ({ handleTickets }) => {
     };
 
     return (
-        <ProcesarCompraForm
-            handleSubmit={handleSubmit}
-            form={form}
-            onChange={onChange}
-            emailMatch={emailMatch}
-        />
-    );
+        <>
+          {!loading && (
+            <ProcesarCompraForm
+              handleSubmit={handleSubmit}
+              form={form}
+              onChange={onChange}
+              emailMatch={emailMatch}
+            />
+          )}
+        </>
+      );
 
 };
 

@@ -94,7 +94,7 @@ const Ticket = () => {
                     </Card>
                 </div>
             ) : (
-                <ProcesarCompra handleTickets={handleTicket} />
+                <ProcesarCompra handleTickets={handleTicket} loading={loading}/>
             )}
 
             <br></br>
